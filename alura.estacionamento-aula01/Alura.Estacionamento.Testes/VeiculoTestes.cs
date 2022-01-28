@@ -60,5 +60,23 @@ namespace Alura.Estacionamento.Testes
             //Assert
             Assert.Equal(modelo.VelocidadeAtual, veiculo.VelocidadeAtual);
         }
+
+        [Fact]
+        public void DadosVeiculo()
+        {
+            //Arrange
+            var carro = new Veiculo();
+            carro.Proprietario = "Davi Souza";
+            carro.Tipo = TipoVeiculo.Automovel;
+            carro.Placa = "ZAP-2010";
+            carro.Cor = "Azul";
+            carro.Modelo = "Fusca";
+
+            //Act
+            string dados = carro.ToString();
+
+            //Assert
+            Assert.Contains("Ficha do veículo:", dados);
+        }
     }
 }
